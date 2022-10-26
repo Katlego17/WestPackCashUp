@@ -16,7 +16,7 @@
                     @endif
                     {{ Auth::user()->name }}
                     <br>
-                    {{$msg}}
+                    {{$msg}}uuuuuuuuu
                 </div>
             </div>
         </div>
