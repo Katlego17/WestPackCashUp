@@ -50,17 +50,29 @@ class LoginController extends Controller
 
         if(auth()->attempt(array('email' => $input['email'], 'password' => $input['password'])))
         {
-            if (auth()->user()->role == 2)
+            if (auth()->user()->role == "SPT_Manager")
             {
               return redirect()->route('admin.home');
             }
-            else if (auth()->user()->role == 1)
+            else if (auth()->user()->role == "WP_Owner")
             {
-              return redirect()->route('editor.home');
+              return redirect()->route('owner.home');
             }
-            else if (auth()->user()->role == 0)
+            else if (auth()->user()->role == "WP_Manager")
             {
-              return redirect()->route('store.home');
+              return redirect()->route('manager.home');
+            }
+            else if (auth()->user()->role == "WP_HOCashup")//.home.blade.php
+            {
+                return redirect()->route('headoffice.home');
+            }
+            else if (auth()->user()->role == "WP_StoreCashup")
+            {
+                return redirect()->route('store.home');
+            }
+            else if (auth()->user()->role == "WP_Supplier")
+            {
+                return redirect()->route('supplier.home');
             }
             else
             {

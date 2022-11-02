@@ -19,6 +19,7 @@ Route::get('/', function () {
 });
 Route::get('fullcalender', [FullCalenderController::class, 'index']);
 Route::post('fullcalenderAjax', [FullCalenderController::class, 'ajax']);
+
 Auth::routes();
 
 // Route User

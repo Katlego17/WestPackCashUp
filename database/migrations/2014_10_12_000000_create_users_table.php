@@ -20,7 +20,7 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             //0 = User/store, 1 = Editor/headoffice, 2 = Admin
-            $table->tinyInteger('role')->default(0);
+            $table->string('role');
             $table->rememberToken();
             $table->timestamps();
         });

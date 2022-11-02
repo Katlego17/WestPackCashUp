@@ -15,7 +15,7 @@
                     @endif
                     {{ Auth::user()->name }}
                     <br>
-                    {{$msg}}Store
+                    {{$msg}}Supplier
                 </div>
             </div>
         </div>
