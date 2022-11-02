@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\FullCalenderController;
+use App\Http\Controllers\StoreCashupController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,18 +24,35 @@ Route::post('fullcalenderAjax', [FullCalenderController::class, 'ajax']);
 
 Auth::routes();
 
-// Route User
-Route::middleware(['auth','user-role:user'])->group(function()
-{
-    Route::get("/home",[HomeController::class, 'userHome'])->name("store.home");
-});
-// Route Editor
-Route::middleware(['auth','user-role:editor'])->group(function()
-{
-    Route::get("/editor/home",[HomeController::class, 'editorHome'])->name("editor.home");
-});
+
+
 // Route Admin
-Route::middleware(['auth','user-role:admin'])->group(function()
+Route::middleware(['auth','user-role:SPT_Manager'])->group(function()
 {
-    Route::get("/admin/home",[HomeController::class, 'adminHome'])->name("admin.home");
+    Route::get("/admin/home",[HomeController::class, 'Home'])->name("admin.home");
+});
+// Route Owner
+Route::middleware(['auth','user-role:WP_Owner'])->group(function()
+{
+    Route::get("/owner/home",[HomeController::class, 'Home'])->name("owner.home");
+});
+// Route WP_Manager
+Route::middleware(['auth','user-role:WP_Manager'])->group(function()
+{
+    Route::get("/manager/home",[HomeController::class, 'Home'])->name("manager.home");
+});
+// Route WP_HOCashup
+Route::middleware(['auth','user-role:WP_HOCashup'])->group(function()
+{
+    Route::get("/headoffice/home",[HomeController::class, 'Home'])->name("headoffice.home");
+});
+// Route WP_Store
+Route::middleware(['auth','user-role:WP_StoreCashup'])->group(function()
+{
+    Route::get("/store/home",[StoreCashupController::class, 'Home'])->name("store.home");
+});
+// Route WP_Manager
+Route::middleware(['auth','user-role:WP_Supplier'])->group(function()
+{
+    Route::get("/supplier/home",[HomeController::class, 'Home'])->name("supplier.home");
 });
