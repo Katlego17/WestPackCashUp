@@ -13,7 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    {{ Auth::user()->name }}
+                    form
                     <br>
                 </div>
             </div>

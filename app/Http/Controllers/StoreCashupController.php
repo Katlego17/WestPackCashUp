@@ -10,4 +10,8 @@ class StoreCashupController extends Controller
     {
         return view("store.home");
     }
+    public function cashupform()
+    {
+        return view("store.cashupform");
+    }
 }
