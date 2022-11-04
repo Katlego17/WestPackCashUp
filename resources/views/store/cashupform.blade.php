@@ -1,5 +1,4 @@
 @extends('layouts.store')
-
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -13,8 +12,23 @@
                             {{ session('status') }}
                         </div>
                     @endif
+                    <div class="container">
+                        <div class="row">
+                          <div class="col-sm border">
+                            One of 4 columns
+                          </div>
+                          <div class="col-sm border">
+                            One of 4 columns
+                          </div>
+                          <div class="col-sm border">
+                            One of 4 columns
+                          </div>
+                          <div class="col-sm border">
+                            One of 4 columns
+                          </div>
+                        </div>
+                    </div>
 
-                    <br>
                 </div>
             </div>
         </div>
