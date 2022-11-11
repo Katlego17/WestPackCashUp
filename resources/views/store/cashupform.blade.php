@@ -13,8 +13,9 @@
                         </div>
                     @endif
                     <div class="container">
+                      <!--first row-->
                         <div class="row">
-                          <div class="col-sm border">
+                          <div class="col-sm  border">
                             One of 4 columns
                           </div>
                           <div class="col-sm border">
@@ -25,6 +26,55 @@
                           </div>
                           <div class="col-sm border">
                             One of 4 columns
+                          </div>
+                        </div>
+                        <!--MID-->
+                        <div class="row">
+                          <div class="col-sm  border">
+                            <div class="row">
+                              <div class="col-sm  border">
+                                One of 1 columns
+                              </div>
+                              <div class="col-sm border">
+                                One of 2 columns
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-sm border">
+                            <div class="row">
+                              <div class="col-sm  border">
+                                One of 2 rows
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-sm  border">
+                                One of 2 rows
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!--END-->
+                        <div class="row">
+                          <div class="col-sm  border">
+                            One of 4 columns
+                          </div>
+                          <div class="col-sm border">
+                            One of 4 columns
+                          </div>
+                          <div class="col-sm border">
+                            One of 4 columns
+                          </div>
+                          <div class="col-sm border">
+                            <div class="row">
+                              <div class="col-sm  border">
+                                One of 2 rows
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-sm  border">
+                                One of 2 rows
+                              </div>
+                            </div>
                           </div>
                         </div>
                     </div>
