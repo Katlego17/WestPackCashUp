@@ -8,7 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class recieptCashUpSummary extends Model
 {
     use HasFactory;
+
     protected $table = 'reciept_cash_up_summary';
+
     protected $fillable = [
         'totalG4SDeposit1',
         'looseChange',

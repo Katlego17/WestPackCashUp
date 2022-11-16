@@ -37,22 +37,38 @@ class StoreCashUpFormComponent extends Component
 
     public function submit()
     {
+        //Top Row Steez
+        //SECTION 1
+        $validatedData = $this->validate([
+            'totalG4SDeposit1' => 'required',
+            'looseChange' => 'required',
+            'totalG4SDeposit2' => 'required',
+            'changeFromBank' => 'required',
+            'comments' => 'required',
+        ]);
+
+        recieptCashUpSummary::create($validatedData);
+        //SECTION 2
         $validatedDate = $this->validate([
                 'portableDevice' => 'required',
                 'innovation' => 'required',
-            ],
+            ]/*,
             [
                 'portableDevice.0.required' => 'portableDevice field is required',
                 'innovation.0.required' => 'innovation field is required',
                 'portableDevice.*.required' => 'portableDevice field is required',
                 'innovation.*.required' => 'innovation field is required',
-            ]
+            ]*/
         );
-
         foreach ($this->portableDevice as $key => $value) {
             cardStatementCheck::create(['portableDevice' => $this->portableDevice[$key], 'innovation' => $this->innovation[$key]]);
         }
 
+        //Second Row Steez
+
+
+
+        //Needed methods for all my inputs below
         $this->inputs = [];
 
         $this->resetInputFields();
@@ -70,7 +86,13 @@ class StoreCashUpFormComponent extends Component
      * @return response()
      */
     private function resetInputFields(){
-        $this->name = '';
-        $this->phone = '';
+        $this->portableDevice = '';
+        $this->innovation = '';
+        $this->totalG4SDeposit1 = '';
+        $this->looseChange = '';
+        $this->totalG4SDeposit2 = '';
+        $this->changeFromBank = '';
+        $this->comments = '';
     }
+
 }
