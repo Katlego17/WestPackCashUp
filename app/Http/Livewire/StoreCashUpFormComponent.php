@@ -11,33 +11,66 @@ class StoreCashUpFormComponent extends Component
     //Top Row Steez
     public $totalG4SDeposit1,$looseChange,$totalG4SDeposit2,$changeFromBank,$comments,$portableDevice,$innovation;
 
-    public $questions = [''];
+    public $updateMode = false;
+    public $inputs = [];
+    public $i = 1;
+     /**
+     * Write code on Method
+     *
+     * @return response()
+     */
+    public function add($i)
+    {
+        $i = $i + 1;
+        $this->i = $i;
+        array_push($this->inputs ,$i);
+    }
+    /**
+     * Write code on Method
+     *
+     * @return response()
+     */
+    public function remove($i)
+    {
+        unset($this->inputs[$i]);
+    }
 
     public function submit()
     {
-        //Top Row Steez
-        $validatedData = $this->validate([
-            'totalG4SDeposit1' => 'required',
-            'looseChange' => 'required',
-            'totalG4SDeposit2' => 'required',
-            'changeFromBank' => 'required',
-            'comments' => 'required',
-        ]);
+        $validatedDate = $this->validate([
+                'portableDevice' => 'required',
+                'innovation' => 'required',
+            ],
+            [
+                'portableDevice.0.required' => 'portableDevice field is required',
+                'innovation.0.required' => 'innovation field is required',
+                'portableDevice.*.required' => 'portableDevice field is required',
+                'innovation.*.required' => 'innovation field is required',
+            ]
+        );
 
-        recieptCashUpSummary::create($validatedData);
+        foreach ($this->portableDevice as $key => $value) {
+            cardStatementCheck::create(['portableDevice' => $this->portableDevice[$key], 'innovation' => $this->innovation[$key]]);
+        }
 
-        $validatedData = $this->validate([
-            'portableDevice' => 'required',
-            'innovation' => 'required',
-        ]);
+        $this->inputs = [];
 
-        cardStatementCheck::create($validatedData);
+        $this->resetInputFields();
 
-        return redirect()->to('/store/cashupform');
+        session()->flash('message', 'Contact Has Been Created Successfully.');
     }
 
     public function render()
     {
         return view('livewire.store-cash-up-form-component');
+    }
+    /**
+     * Write code on Method
+     *
+     * @return response()
+     */
+    private function resetInputFields(){
+        $this->name = '';
+        $this->phone = '';
     }
 }
