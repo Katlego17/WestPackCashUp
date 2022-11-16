@@ -179,7 +179,7 @@
                     <div class="col  border">
                       DATE
                       <br>
-                      Totals per chashier
+                      Totals per cashier
                       <div class="row">
                         <div class="col  border">
                           Cashier
@@ -200,26 +200,38 @@
                           Innervation
                         </div>
                       </div>
-                      <div class="row">
-                        <div class="col  border">
-                          -
-                        </div>
-                        <div class="col border">
-                          -
-                        </div>
-                        <div class="col  border">
-                          -
-                        </div>
-                        <div class="col border">
-                          -
-                        </div>
-                        <div class="col  border">
-                          -
-                        </div>
-                        <div class="col border">
-                          -
-                        </div>
+                      <!--START-->
+                      @foreach($midInputs as $key => $value)
+                        <div class="row">
+                            <div class="col ">
+                                <input type="text" class="form-control" wire:model="cashier.{{$value}}" style="">
+                            </div>
+                            <div class="col ">
+                                <input type="text" class="form-control" wire:model="cash.{{$value}}" style="">
+                            </div>
+                            <div class="col ">
+                                <input type="text" class="form-control" wire:model="cheques.{{$value}}" style="">
+                            </div>
+                            <div class="col ">
+                                <input type="text" class="form-control" wire:model="EFT.{{$value}}" style="">
+                            </div>
+                            <div class="col ">
+                                <input type="text" class="form-control" wire:model="midinnovation.{{$value}}" style="">
+                            </div>
+                            <div class="col ">
+                                <input type="text" class="form-control" wire:model="midPortableDevice.{{$value}}" style="">
+                            </div>
+                            <div class="col">
+                                <button class="btn btn-danger btn-sm" wire:click.prevent="midRemove({{$key}})">Remove</button>
+                            </div>
+
                       </div>
+                      @endforeach
+                      <div class="">
+                        <button class="btn text-white btn-info btn-sm" wire:click.prevent="midAdd({{$midi}})">Add</button>
+                        </div>
+                      <!--END-->
+
                       <div class="row">
                         <div class="col  border">
                          Total
@@ -299,38 +311,45 @@
                         </div>
                       </div>
                     </div>
-                    <div class="col border"><!--STRETCH NEEDED-->
-                      Petty Cash Reconciliation
-                      <div class="row">
-                        <div class="col  border">
-                          t
-                        </div>
-                        <div class="col border">
-                          t
-                        </div>
+                    <div class="col border">
+                        Petty Cash Reconciliation
+                        <div class="row">
+                            <div class="col  border">
+                            t
+                            </div>
+                            <div class="col border">
+                            t
+                            </div>
 
-                        <div class="col  border">
-                          t
+                            <div class="col  border">
+                            t
+                            </div>
+                            <div class="col border">
+                            t
+                            </div>
                         </div>
-                        <div class="col border">
-                          t
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col  border">
-                          -
-                        </div>
-                        <div class="col border">
-                          -
-                        </div>
-
-                        <div class="col  border">
-                          -
-                        </div>
-                        <div class="col border">
-                          -
-                        </div>
-                      </div>
+                        <!--START-->
+                        @foreach($pettyInputs as $key => $value)
+                            <div class="row">
+                                <div class="col  border">
+                                    <input type="text" class="form-control" wire:model="supplier.{{$value}}" style="">
+                                </div>
+                                <div class="col border">
+                                    <input type="text" class="form-control" wire:model="explainExpense.{{$value}}" style="">
+                                </div>
+                                <div class="col  border">
+                                    <input type="text" class="form-control" wire:model="approvedSlipAttached.{{$value}}" style="">
+                                </div>
+                                <div class="col border">
+                                    <input type="text" class="form-control" wire:model="amount.{{$value}}" style="">
+                                </div>
+                                <div class="col">
+                                    <button class="btn btn-danger btn-sm" wire:click.prevent="pettyRemove({{$key}})">Remove</button>
+                                </div>
+                            </div>
+                        @endforeach
+                        <button class="btn text-white btn-info btn-sm" wire:click.prevent="pettyAdd({{$pettyi}})">Add</button>
+                        <!--END--->
                       <div class="row">
                         <div class="col  border">
                           Total
@@ -359,17 +378,25 @@
                           Amount
                         </div>
                       </div>
+                      <!--START-->
+                      @foreach($eftInputs as $key => $value)
                       <div class="row">
-                        <div class="col  border">
-                          -
-                        </div>
-                        <div class="col border">
-                          -
-                        </div>
-                        <div class="col  border">
-                          -
-                        </div>
+                          <div class="col  border">
+                              <input type="text" class="form-control" wire:model="dateOfPayment.{{$value}}" style="">
+                          </div>
+                          <div class="col border">
+                              <input type="text" class="form-control" wire:model="salesOrderNumber.{{$value}}" style="">
+                          </div>
+                          <div class="col  border">
+                              <input type="text" class="form-control" wire:model="eftamount.{{$value}}" style="">
+                          </div>
+                          <div class="col">
+                              <button class="btn btn-danger btn-sm" wire:click.prevent="eftRemove({{$key}})">Remove</button>
+                          </div>
                       </div>
+                  @endforeach
+                  <button class="btn text-white btn-info btn-sm" wire:click.prevent="eftAdd({{$efti}})">Add</button>
+                  <!--END--->
                       <div class="row">
                         <div class="col  border">
                           Total
