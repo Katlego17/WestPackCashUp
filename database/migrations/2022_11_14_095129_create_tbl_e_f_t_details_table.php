@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string("dateOfPayment");
             $table->string("salesOrderNumber");
-            $table->double("amount");
+            $table->double("amount")->nullable();
             $table->timestamps();
         });
     }
