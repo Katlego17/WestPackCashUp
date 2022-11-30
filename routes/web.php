@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\FullCalenderController;
 use App\Http\Controllers\StoreCashupController;
+use App\Http\Livewire\Calendar;
+use App\Models\Event;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,3 +59,5 @@ Route::middleware(['auth','user-role:WP_Supplier'])->group(function()
 {
     Route::get("/supplier/home",[HomeController::class, 'Home'])->name("supplier.home");
 });
+
+Livewire::component('calendar', Calendar::class);
