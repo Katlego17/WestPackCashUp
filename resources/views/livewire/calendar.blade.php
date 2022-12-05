@@ -18,8 +18,8 @@
                   var calendar = new Calendar(calendarEl, {
                   events: JSON.parse(data),
                   dateClick(info)  {
-                     var title = prompt('Enter Event Title');
-                     var date = new Date(info.dateStr);
+                    var title = "Cash Up Done"/*prompt('Enter Event Title')*/;
+                     var date = new Date(info.dateStr + 'T00:00:00');
                      if(title != null && title != ''){
                        calendar.addEvent({
                           title: title,
@@ -28,7 +28,7 @@
                         });
                        var eventAdd = {title: title,start: date};
                        @this.addevent(eventAdd);
-                       alert('Great. Now, update database...');
+                       /*alert('Great. Now, update database...');*/
                      }else{
                       alert('Event Title Is Required');
                      }
