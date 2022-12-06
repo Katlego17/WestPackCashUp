@@ -16,9 +16,10 @@
                   var checkbox = document.getElementById('drop-remove');
                   var data =   @this.events;
                   var calendar = new Calendar(calendarEl, {
+                    height: 650,
                   events: JSON.parse(data),
-                  dateClick(info)  {
-                    var title = "Cash Up Done"/*prompt('Enter Event Title')*/;
+                  /*dateClick(info)  {
+                    var title = "Cash Up Done";//prompt('Enter Event Title')
                      var date = new Date(info.dateStr + 'T00:00:00');
                      if(title != null && title != ''){
                        calendar.addEvent({
@@ -28,11 +29,11 @@
                         });
                        var eventAdd = {title: title,start: date};
                        @this.addevent(eventAdd);
-                       /*alert('Great. Now, update database...');*/
+                       //alert('Great. Now, update database...');
                      }else{
                       alert('Event Title Is Required');
                      }
-                  },
+                  },*/
                   editable: true,
                   selectable: true,
                   displayEventTime: false,
@@ -55,7 +56,7 @@
                               });
                           }
                       }
-                  });
+                  });//*/
                   calendar.render();
                   @this.on(`refreshCalendar`, () => {
                       calendar.refetchEvents()
