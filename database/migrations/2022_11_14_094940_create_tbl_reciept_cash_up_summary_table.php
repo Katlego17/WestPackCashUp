@@ -20,6 +20,8 @@ return new class extends Migration
             $table->double("totalG4SDeposit2");
             $table->double("changeFromBank");
             $table->string("comments");
+            $table->string("start")->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->string("title")->default("Cash Up Done!");
             $table->timestamps();
         });
     }

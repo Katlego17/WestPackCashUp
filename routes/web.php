@@ -51,8 +51,8 @@ Route::middleware(['auth','user-role:WP_HOCashup'])->group(function()
 // Route WP_Store
 Route::middleware(['auth','user-role:WP_StoreCashup'])->group(function()
 {
-    Route::get("/store/home",[StoreCashupController::class, 'Home'])->name("store.home");
-    Route::get("/store/cashupform",[StoreCashupController::class, 'cashupform'])->name("store.home");
+    Route::get("/home",[StoreCashupController::class, 'Home'])->name("store.home");
+    Route::get("/cashupform",[StoreCashupController::class, 'cashupform'])->name("store.home");
 });
 // Route WP_Manager
 Route::middleware(['auth','user-role:WP_Supplier'])->group(function()

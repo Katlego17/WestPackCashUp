@@ -16,6 +16,8 @@ class recieptCashUpSummary extends Model
         'looseChange',
         'totalG4SDeposit2',
         'changeFromBank',
-        'comments'
+        'comments',
+        'created_at',
+        'start'
     ];
 }

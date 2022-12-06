@@ -37,8 +37,8 @@
                     </ul>
                     <!-- Center Of Navbar -->
                     <ul class="navbar-nav m-auto">
-                        <li class="m-2"><a href="/store/home" class="text-decoration-none text-reset ">Home</a></li>
-                        <li class="m-2"><a href="/store/cashupform" class="text-decoration-none text-reset ">Daily Cash Up Summary</a></li>
+                        <li class="m-2"><a href="/home" class="text-decoration-none text-reset ">Home</a></li>
+                        <li class="m-2"><a href="/cashupform" class="text-decoration-none text-reset ">Daily Cash Up Summary</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

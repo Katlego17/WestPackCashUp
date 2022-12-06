@@ -2,6 +2,7 @@
 namespace App\Http\Livewire;
 use Livewire\Component;
 use App\Models\Event;
+use App\Models\recieptCashUpSummary;
 
 class Calendar extends Component
 {
@@ -9,7 +10,7 @@ class Calendar extends Component
 
     public function getevent()
     {
-        $events = Event::select('id','title','start')->get();
+        $events = recieptCashUpSummary::select('id','title','start')->get();
 
         return  json_encode($events);
     }
@@ -45,8 +46,8 @@ class Calendar extends Component
     */
     public function render()
     {
-        $events = Event::select('id','title','start')->get();
-
+        $events = recieptCashUpSummary::select('id','title','start')->get();
+        //dd($events);
         $this->events = json_encode($events);
 
         return view('livewire.calendar');

@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            //0 = User/store, 1 = Editor/headoffice, 2 = Admin
-            $table->string('role');
+            //SPT_Manager,WP_Owner,WP_Manager,WP_HOCashup,WP_StoreCashup,WP_Supplier
+            $table->string('role')->default("WP_StoreCashup");
             $table->rememberToken();
             $table->timestamps();
         });
