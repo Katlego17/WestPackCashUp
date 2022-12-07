@@ -137,13 +137,33 @@ class StoreCashUpFormComponent extends Component
             ]
         );
         foreach ($this->portableDevice as $key => $value) {
-            cardStatementCheck::create(['portableDevice' => $this->portableDevice[$key],
-             'innovation' => $this->innovation[$key]
+            cardStatementCheck::create([
+                'portableDevice' => $this->portableDevice[$key],
+                'innovation' => $this->innovation[$key]
             ]);
         }
 
-        //Third Row Steez
-        //Section 1
+        //Second Row Steez totalsPerCashier
+        //Section 1 public $cashier,$cash,$cheques,$EFT,$midinnovation,$midPortableDevice;
+        $validatedDate = $this->validate([
+            'cashier' => 'required',
+            'cash' => 'required',
+            'cheques' => 'required',
+            'EFT' => 'required',
+            'midinnovation' => 'required',
+            'midPortableDevice' => 'required',
+        ]
+        );
+        foreach ($this->cashier as $key => $value) {
+            totalsPerCashier::create([
+                'cashier' => $this->cashier[$key],
+                'cash' => $this->cash[$key],
+                'cheques' => $this->cheques[$key],
+                'EFT' => $this->EFT[$key],
+                'innovation' => $this->midinnovation[$key],
+                'portableDevices' => $this->midPortableDevice[$key]
+            ]);
+        }
 
 
         //petty cash recon public $supplier,$explainExpense,$approvedSlipAttached,$amount;
@@ -185,7 +205,7 @@ class StoreCashUpFormComponent extends Component
 
         $this->resetInputFields();
 
-        session()->flash('message', 'Contact Has Been Created Successfully.');
+        session()->flash('message', 'Info Created Successfully.');
     }
 
     public function render()
@@ -211,6 +231,13 @@ class StoreCashUpFormComponent extends Component
         $this->EFT = '';
         $this->midinnovation = '';
         $this->midPortableDevice = '';
+        $this->supplier = '';
+        $this->explainExpense = '';
+        $this->approvedSlipAttached = '';
+        $this->amount = '';
+        $this->dateOfPayment = '';
+        $this->salesOrderNumber = '';
+        $this->eftamount = '';
     }
 
 }
