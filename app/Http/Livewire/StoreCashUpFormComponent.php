@@ -18,6 +18,7 @@ class StoreCashUpFormComponent extends Component
     public $updateMode = false;
     public $inputs = [];
     public $i = 1;
+    public $test;
      /**
      * Write code on Method
      *
@@ -28,6 +29,8 @@ class StoreCashUpFormComponent extends Component
         $i = $i + 1;
         $this->i = $i;
         array_push($this->inputs ,$i);
+
+
     }
     /**
      * Write code on Method
@@ -210,7 +213,9 @@ class StoreCashUpFormComponent extends Component
 
     public function render()
     {
-        return view('livewire.store-cash-up-form-component');
+        return view('livewire.store-cash-up-form-component',[
+            'test'=>$this->test
+        ]);
     }
     /**
      * Write code on Method

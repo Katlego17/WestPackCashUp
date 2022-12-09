@@ -9,6 +9,8 @@
                       Franchise Logo
                       <br>
                       Franchise Name
+                      <br>
+                      {{$test}}
                     </div>
                     <div class="col border">
                       Daily Cash Up Summary
