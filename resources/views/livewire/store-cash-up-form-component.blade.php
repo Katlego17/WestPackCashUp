@@ -10,7 +10,7 @@
                       <br>
                       Franchise Name
                       <br>
-                      {{$test}}
+
                     </div>
                     <div class="col border">
                       Daily Cash Up Summary
@@ -168,7 +168,7 @@
                       </div>
                       <div class="row">
                         <div class="col border">
-                         R 0
+                         R {{$test}}
                         </div>
                         <div class="col border">
                          R 0
