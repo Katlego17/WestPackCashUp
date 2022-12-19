@@ -211,10 +211,22 @@ class StoreCashUpFormComponent extends Component
         session()->flash('message', 'Info Created Successfully.');
     }
 
+    public $renderedPortableDevices;
+    public $renderedInnovation;
     public function render()
     {
+        if ($this->portableDevice)
+        {
+            foreach ($this->portableDevice as $key => $value)
+            {
+                $this->renderedPortableDevices = $this->portableDevice[$key];
+                //$this->renderedInnovation = $this->innovation[$key];
+            }
+        }
+
+        #dd($this->renderedPortableDevices);
         return view('livewire.store-cash-up-form-component',[
-            'test'=>$this->test
+            'tests'=>$this->renderedPortableDevices
         ]);
     }
     /**

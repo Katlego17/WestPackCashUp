@@ -160,7 +160,7 @@
                       <!--END-->
                       <div class="row">
                         <div class="col border">
-                          R 0
+                          R {{$tests}}
                         </div>
                         <div class="col border">
                          R 0
@@ -168,7 +168,7 @@
                       </div>
                       <div class="row">
                         <div class="col border">
-                         R {{$test}}
+                         R 0
                         </div>
                         <div class="col border">
                          R 0
