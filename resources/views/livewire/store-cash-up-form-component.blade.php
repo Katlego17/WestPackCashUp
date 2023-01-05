@@ -8,7 +8,7 @@
                     <div class="col  border">
                       Franchise Logo
                       <br>
-                      Franchise Name
+                      {{ $franchiseName }}
                       <br>
 
                     </div>
@@ -18,7 +18,7 @@
                       *To Be Completed At Store Level*
                       <hr>
                       Comments
-                      <input type="textarea" class="form-control" wire:model="comments" style="">
+                      <input type="text" class="form-control" wire:model="comments" style="">
                     </div>
                     <div class="col border">
                       Receipt Cash Up Summary

@@ -9,6 +9,8 @@ use App\Models\cashOfficeTotals;
 use App\Models\eftDetails;
 use App\Models\pettyCashReconciliation;
 use App\Models\totalsPerCashier;
+use App\Models\Store;
+use Auth;
 
 class StoreCashUpFormComponent extends Component
 {
@@ -213,6 +215,8 @@ class StoreCashUpFormComponent extends Component
 
     public $renderedPortableDevices;
     public $renderedInnovation;
+    public $franchiseName;
+
     public function render()
     {
         if ($this->portableDevice)
@@ -225,6 +229,8 @@ class StoreCashUpFormComponent extends Component
         }
 
         #dd($this->renderedPortableDevices);
+        $this->franchiseName = Store::find(Auth::user()->store_id)->name;
+
         return view('livewire.store-cash-up-form-component',[
             'tests'=>$this->renderedPortableDevices
         ]);

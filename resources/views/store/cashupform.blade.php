@@ -7,7 +7,7 @@
     <div class="row justify-content-center">
         <div class=" ">
             <div class="card col-md-auto">
-                <div class="card-header">{{ __('Store Cash Up') }}</div>
+                <div class="card-header">{{ $franchiseName }} {{ __('Store Cash Up') }}</div>
 
                 <div class="">
                     @if (session('status'))
