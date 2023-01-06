@@ -1,6 +1,6 @@
 @extends('layouts.store')
 <head>
-    <title>Laravel 9 Livewire Fullcalendar Example - Tutsmake.com</title>
+    <title>West Pack</title>
     @livewireStyles
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -13,7 +13,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">{{ __('Store Dashboard') }}</div>
+                <div class="card-header">{{ __('Stores Daily Cash Up Calender') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))

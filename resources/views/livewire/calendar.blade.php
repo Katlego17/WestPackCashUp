@@ -34,18 +34,18 @@
                       alert('Event Title Is Required');
                      }
                   },*/
-                  editable: true,
-                  selectable: true,
-                  displayEventTime: false,
-                  droppable: true, // this allows things to be dropped onto the calendar
-                  drop: function(info) {
+                  /*editable: true,
+                  selectable: true,*/
+                  displayEventTime: false,/*
+                  droppable: false, // this allows things to be dropped onto the calendar*/
+                  /*drop: function(info) {
                       // is the "remove after drop" checkbox checked?
                       if (checkbox.checked) {
                       // if so, remove the element from the "Draggable Events" list
                       info.draggedEl.parentNode.removeChild(info.draggedEl);
                       }
                   },
-                  eventDrop: info => @this.eventDrop(info.event, info.oldEvent),
+                  eventDrop: info => @this.eventDrop(info.event, info.oldEvent),//*/
                   loading: function(isLoading) {
                           if (!isLoading) {
                               // Reset custom events
