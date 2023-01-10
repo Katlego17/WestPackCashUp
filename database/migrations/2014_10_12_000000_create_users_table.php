@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('password');
             //SPT_Manager,WP_Owner,WP_Manager,WP_HOCashup,WP_StoreCashup,WP_Supplier
             $table->string('role')->default("WP_StoreCashup");
-            $table->string('store')->default("No Store Selected");
+            $table->string('store_id')->default("No Store Selected");
             $table->rememberToken();
             $table->timestamps();
         });

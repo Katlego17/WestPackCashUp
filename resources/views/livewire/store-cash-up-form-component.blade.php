@@ -149,9 +149,9 @@
                             <div class="col ">
                                 <input type="text" class="form-control" wire:model="innovation.{{$value}}" style="">
                             </div>
-                            <div class="col">
+                            <!--<div class="col">
                                 <button class="btn btn-danger btn-sm" wire:click.prevent="remove({{$key}})">Remove</button>
-                            </div>
+                            </div>-->
                       </div>
                       @endforeach
                       <div class="">

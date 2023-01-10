@@ -19,7 +19,7 @@ class StoreCashUpFormComponent extends Component
 
     public $updateMode = false;
     public $inputs = [];
-    public $i = 1;
+    public $i = 0;
     public $test;
      /**
      * Write code on Method
@@ -31,7 +31,7 @@ class StoreCashUpFormComponent extends Component
         $i = $i + 1;
         $this->i = $i;
         array_push($this->inputs ,$i);
-
+        #dd($this->inputs);
 
     }
     /**
@@ -42,6 +42,8 @@ class StoreCashUpFormComponent extends Component
     public function remove($i)
     {
         unset($this->inputs[$i]);
+        /*$i = $i - 1;
+        $this->i = $i;*/
     }
 
     //Mid Row Steez
@@ -219,20 +221,25 @@ class StoreCashUpFormComponent extends Component
 
     public function render()
     {
-        if ($this->portableDevice)
-        {
-            foreach ($this->portableDevice as $key => $value)
-            {
-                $this->renderedPortableDevices = $this->portableDevice[$key];
-                //$this->renderedInnovation = $this->innovation[$key];
-            }
-        }
-
-        #dd($this->renderedPortableDevices);
         $this->franchiseName = Store::find(Auth::user()->store_id)->name;
 
+        if ($this->inputs)
+        {
+            if ($this->portableDevice)
+            {
+                $test = array_sum($this->portableDevice);//implode(",",$this->portableDevice)
+            }
+            else
+            {
+                $test=0;
+            }
+        }
+        else
+        {
+            $test=0;
+        }
         return view('livewire.store-cash-up-form-component',[
-            'tests'=>$this->renderedPortableDevices
+            'tests'=>$test
         ]);
     }
     /**
